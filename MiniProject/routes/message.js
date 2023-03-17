@@ -2,15 +2,14 @@ const express = require("express");
 const router = express.Router();
 const data = require('./data');
 const fs = require("fs");
-
+const path =require('path');
+const rootDir = require('../util/path');
 router.get("/", (req, res, next) => {
-  res.send(
-    `<form action="/" method="POST" onsubmit="document.getElementById('username').value=localStorage.getItem('username')"><input id="message" type="text" name="message"><input type="hidden" name="username" id="username"><button type="submit">Send Message</button></form>`
-  );
+  res.sendFile(path.join(rootDir,'views','message.html'));
 });
 
 router.post("/", (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   fs.appendFile("username.txt", `${req.body.username}: ${req.body.message}\n`, (err) => {
     if (err) {
       console.log(err);

@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
-    <form action="/login" method="POST">
+    <style>
+      .username{
+        width: 100%;
+        margin-top: 20px;
+        background-color: rgb(0, 255, 200);
+        height: 56px;
+        font-size: larger;
+      }
+      .btn{
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 25%;
+        background-color:azure;
+        font-size: medium;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <form action="/login" method="POST">
         <input type="text" name="username">
         <button>Sign Up</button>
     </form>
     <form action="/login" method="GET">
         <input type="text" name="username">
         <button>Login</button>
+    </form> -->
+    <nav>
+       <a href="/contactUs"> Contact Us</a>
+    </nav>
+    <form
+      action="/login"
+      method="POST"
+      onsubmit="localStorage.setItem('username',document.getElementById('username').value)"
+    >
+      <input class="username" id="username" type="text" name="name" /><button
+        type="submit"
+        value=""
+        class="btn"
+      >
+        Login
+      </button>
     </form>
-</body>
+  </body>
 </html>

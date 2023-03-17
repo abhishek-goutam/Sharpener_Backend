@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message</title>
+    <style>
+   .msg{
+    width: 100%;
+        margin-top: 20px;
+        background-color: rgb(0, 255, 200);
+        height: 56px;
+        font-size: larger;
+   }
+    </style>
+  </head>
+  <body>
+    <form
+      action="/"
+      method="POST"
+      onsubmit="document.getElementById('username').value=localStorage.getItem('username')"
+    >
+      <input id="message" type="text" name="message" class="msg" /><input
+        type="hidden"
+        name="username"
+        id="username"
+      /><button type="submit">Send Message</button>
+    </form>
+  </body>
+</html>
